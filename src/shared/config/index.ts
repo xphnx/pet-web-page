@@ -1,0 +1,1 @@
+export { routeConfig, ROUTE_PATH } from './routeConfig/routeConfig';
