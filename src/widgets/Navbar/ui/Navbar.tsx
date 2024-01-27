@@ -3,8 +3,7 @@ import { FC } from 'react';
 import { ROUTE_PATH } from '@/shared/config'
 import { classNames } from '@/shared/lib'
 import { AppLink } from '@/shared/ui';
-import LightThemeIcon from '@/shared/assets/icons/light-theme.svg';
-import DarkThemeIcon from '@/shared/assets/icons/dark-theme.svg';
+import { ThemeSwitcher } from '@/widgets/ThemeSwitcher';
 
 import classes from './Navbar.module.scss';
 
@@ -15,8 +14,7 @@ interface NavbarProps {
 export const Navbar: FC<NavbarProps> = ({ className }) => {
   return (
     <div className={classNames(classes.Navbar, {}, [className])}>
-        <LightThemeIcon />
-        <DarkThemeIcon />
+        <ThemeSwitcher />
         <div className={classNames(classes.links)}>
             <AppLink to={ROUTE_PATH.main}>Main</AppLink>
             <AppLink to={ROUTE_PATH.about}>About</AppLink>

@@ -1,1 +1,2 @@
-export { AppLink } from './AppLink/AppLink'
+export { AppLink, AppLinkThemeEnum } from './AppLink/AppLink';
+export { Button, ButtonThemeEnum } from './Button/Button';
