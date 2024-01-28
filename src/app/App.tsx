@@ -3,6 +3,7 @@ import { Navbar } from '@/widgets/Navbar';
 
 import { useTheme } from './providers/ThemeProvider';
 import { AppRouter } from './providers/router';
+import { Sidebar } from '@/widgets/Sidebar';
 import './styles/index.scss';
 
 export const App = () => {
@@ -11,7 +12,10 @@ export const App = () => {
     return (
         <div className={classNames('app', {}, [theme])}>
             <Navbar />
-            <AppRouter />
+            <div className="content-wrapper">
+                <Sidebar />
+                <AppRouter />
+            </div>
         </div>
     )
 }
