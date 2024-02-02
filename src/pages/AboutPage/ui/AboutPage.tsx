@@ -1,6 +1,10 @@
+import { Button, ButtonThemeEnum } from "@/shared/ui";
+import { useTranslation } from "react-i18next"
+
 const AboutPage = () => {
+  const {t} = useTranslation('aboutPage');
   return (
-    <div>AboutPage</div>
+    <div>{t('About Page')}</div>
   )
 }
 

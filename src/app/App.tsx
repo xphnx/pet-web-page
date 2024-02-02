@@ -1,9 +1,12 @@
+import { Suspense } from 'react';
+
 import { classNames } from '@/shared/lib';
 import { Navbar } from '@/widgets/Navbar';
+import { Sidebar } from '@/widgets/Sidebar';
+import "@/shared/config/i18n/i18n";
 
 import { useTheme } from './providers/ThemeProvider';
 import { AppRouter } from './providers/router';
-import { Sidebar } from '@/widgets/Sidebar';
 import './styles/index.scss';
 
 export const App = () => {
@@ -11,11 +14,13 @@ export const App = () => {
     
     return (
         <div className={classNames('app', {}, [theme])}>
-            <Navbar />
-            <div className="content-wrapper">
-                <Sidebar />
-                <AppRouter />
-            </div>
+            <Suspense fallback="Loading...">
+                <Navbar />
+                <div className="content-wrapper">
+                    <Sidebar />
+                    <AppRouter />
+                </div>
+            </Suspense>
         </div>
     )
 }

@@ -21,3 +21,5 @@ declare module '*.scss' {
   
     export default ReactComponent;
   }
+
+  declare const __IS_DEV__: boolean;
