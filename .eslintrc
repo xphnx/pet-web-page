@@ -5,11 +5,12 @@
     "plugin:react/recommended",
     "plugin:react/jsx-runtime",
     "plugin:@typescript-eslint/recommended",
+    "plugin:i18next/recommended",
     "plugin:prettier/recommended",
     "prettier/@typescript-eslint",
     "prettier/react"
  ],
- "plugins": ["react", "react-hooks", "@typescript-eslint", "prettier", "simple-import-sort"],
+ "plugins": ["react", "react-hooks", "@typescript-eslint", "prettier", "simple-import-sort", "i18next"],
  "parser": "@typescript-eslint/parser",
  "parserOptions": { "allowImportExportEverywhere": true },
  "rules": {
@@ -20,6 +21,7 @@
     "@typescript-eslint/no-empty-interface": [1, { "allowSingleExtends": true }],
     "@typescript-eslint/no-explicit-any": 1,
     "arrow-body-style": [1, "as-needed"],
+    "i18next/no-literal-string": ["error", { "markupOnly": true }],
     "simple-import-sort/imports": [
         "warn",
         {
