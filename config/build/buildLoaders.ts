@@ -31,6 +31,17 @@ export default function buildLoaders({isDev}: BuildOptions): RuleSetRule[] {
         exclude: /node_modules/,
     };
 
+    const babelLoader = {
+      test: /\.(js, jsx, tsx, ts)$/,
+      exclude: /node_modules/,
+      use: {
+        loader: "babel-loader",
+        options: {
+          presets: ['@babel/preset-env']
+        }
+      }
+    }
+
     const fileLoader = {
       test: /\.(png|jpe?g|gif|woff|woff2)$/i,
       use: [
@@ -40,5 +51,5 @@ export default function buildLoaders({isDev}: BuildOptions): RuleSetRule[] {
       ],
     };
 
-    return [ fileLoader, svgLoader, tsLoader, cssLoader ];
+    return [ fileLoader, svgLoader, babelLoader, tsLoader, cssLoader ];
 }

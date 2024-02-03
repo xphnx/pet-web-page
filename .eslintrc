@@ -1,0 +1,84 @@
+{
+ "extends": [
+    "ts-react-important-stuff",
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react/jsx-runtime",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended",
+    "prettier/@typescript-eslint",
+    "prettier/react"
+ ],
+ "plugins": ["react", "react-hooks", "@typescript-eslint", "prettier", "simple-import-sort"],
+ "parser": "@typescript-eslint/parser",
+ "parserOptions": { "allowImportExportEverywhere": true },
+ "rules": {
+    "@typescript-eslint/explicit-function-return-type": 0,
+    "@typescript-eslint/no-unused-vars": 1,
+    "@typescript-eslint/no-var-requires": 0,
+    "@typescript-eslint/explicit-module-boundary-types": 1,
+    "@typescript-eslint/no-empty-interface": [1, { "allowSingleExtends": true }],
+    "@typescript-eslint/no-explicit-any": 1,
+    "arrow-body-style": [1, "as-needed"],
+    "simple-import-sort/imports": [
+        "warn",
+        {
+            "groups": [
+                [
+                    /* React */
+                    "^(react)",
+                    /* Libs */
+                    "^[a-zA-Z]",
+                    /* Alias */
+                    "^@/([a-zA-Z]+/*)",
+                    /* Parent */
+                    "^\\.\\.(?!/?$)",
+                    "^\\.\\./?$",
+                    /* Other relative */
+                    "^\\./(?=.*/)(?!/?$)",
+                    "^\\.(?!/?$)",
+                    "^\\./?$",
+                    /* Style */
+                    "\\style\\.ts$"
+                ]
+            ]
+        }
+    ],
+    "simple-import-sort/exports": "warn",
+    "import/extensions": "off",
+    "prettier/prettier": [
+        "error",
+        {
+            "singleQuote": true,
+            "endOfLine": "auto",
+            "semi": true,
+            "tabWidth": 2,
+            "printWidth": 120
+        }
+    ],
+    "react/prop-types": 0,
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": 0,
+    "no-console": [
+        "error",
+        {
+            "allow": ["info", "error"]
+        }
+    ],
+    "no-lonely-if": 1,
+    "no-nested-ternary": 1,
+    "curly": "error",
+    "max-lines": [1, { "max": 250, "skipBlankLines": true }],
+    "padding-line-between-statements": [
+        "error",
+        {"blankLine": "always", "prev": "import", "next": "*" },
+        {"blankLine": "any", "prev": "import", "next": "import" },
+        {"blankLine": "always", "prev": "*", "next": ["const", "let", "var"] },
+        {"blankLine": "always", "prev": ["const", "let", "var"], "next": "*" },
+        {"blankLine": "any", "prev": ["const", "let", "var"], "next": ["const", "let", "var"] },
+        {"blankLine": "always", "prev": "*", "next": ["class", "if", "while", "switch", "try"] },
+        {"blankLine": "always", "prev": ["class", "if", "while", "switch", "try"], "next": "*" },
+        {"blankLine": "always", "prev": "*", "next": "return" }
+    ]
+ }
+}

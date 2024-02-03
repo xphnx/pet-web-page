@@ -1,11 +1,10 @@
-import { Button, ButtonThemeEnum } from "@/shared/ui";
-import { useTranslation } from "react-i18next"
+import { FC } from 'react';
+import { useTranslation } from 'react-i18next';
 
-const AboutPage = () => {
-  const {t} = useTranslation('aboutPage');
-  return (
-    <div>{t('About Page')}</div>
-  )
-}
+const AboutPage: FC = () => {
+  const { t } = useTranslation('aboutPage');
 
-export default AboutPage
+  return <div>{t('AboutPage')}</div>;
+};
+
+export default AboutPage;
