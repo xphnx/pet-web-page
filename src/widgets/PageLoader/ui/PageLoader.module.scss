@@ -1,0 +1,11 @@
+.PageLoader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - (var(--navbar-height) + 2 * var(--page-padding)));
+  flex-grow: 1;
+}
+
+.loader {
+  width: 40px;
+}

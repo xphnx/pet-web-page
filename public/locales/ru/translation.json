@@ -1,5 +1,6 @@
 {
-    "lang": "en",
-    "AboutLink": "О сайте",
-    "MainLink": "Главная"
+  "lang": "en",
+  "AboutLink": "О сайте",
+  "MainLink": "Главная",
+  "PageNotFound": "Страница не найдена"
 }

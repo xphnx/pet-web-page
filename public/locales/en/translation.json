@@ -1,5 +1,6 @@
 {
-    "lang": "ru",
-    "AboutLink": "About",
-    "MainLink": "Main"
+  "lang": "ru",
+  "AboutLink": "About",
+  "MainLink": "Main",
+  "PageNotFound": "Page not found"
 }

@@ -1,6 +1,7 @@
 import { FC, Suspense } from 'react';
 import { classNames } from '@/shared/lib';
 import { Navbar } from '@/widgets/Navbar';
+import { PageLoader } from '@/widgets/PageLoader';
 import { Sidebar } from '@/widgets/Sidebar';
 import { AppRouter } from './providers/router';
 import { useTheme } from './providers/ThemeProvider';
@@ -13,7 +14,7 @@ export const App: FC = () => {
 
   return (
     <div className={classNames('app', {}, [theme])}>
-      <Suspense fallback="Loading...">
+      <Suspense fallback={<PageLoader />}>
         <Navbar />
         <div className="content-wrapper">
           <Sidebar />
