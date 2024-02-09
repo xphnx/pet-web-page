@@ -2,5 +2,7 @@
   "lang": "ru",
   "AboutLink": "About",
   "MainLink": "Main",
-  "PageNotFound": "Page not found"
+  "PageNotFound": "Page not found",
+  "FatalError": "Fatal error occured. Try to reload the page",
+  "ReloadPage": "Reload the page"
 }
