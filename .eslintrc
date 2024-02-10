@@ -21,7 +21,7 @@
     "@typescript-eslint/no-empty-interface": [1, { "allowSingleExtends": true }],
     "@typescript-eslint/no-explicit-any": 1,
     "arrow-body-style": [1, "as-needed"],
-    "i18next/no-literal-string": ["error", { "markupOnly": true }],
+    "i18next/no-literal-string": ["error", { "markupOnly": true, "ignoreAttribute": ["data-testid"] }],
     "simple-import-sort/imports": [
         "warn",
         {
@@ -82,5 +82,13 @@
         {"blankLine": "always", "prev": ["class", "if", "while", "switch", "try"], "next": "*" },
         {"blankLine": "always", "prev": "*", "next": "return" }
     ]
- }
+ },
+ "overrides": [
+    {
+        "files": ["**/src/**/*.test.{ts,tsx}"],
+        "rules": {
+            "i18next/no-literal-string": "off"
+        }
+    }
+ ]
 }

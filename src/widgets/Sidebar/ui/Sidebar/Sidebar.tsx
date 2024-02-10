@@ -14,8 +14,11 @@ export const Sidebar: FC<SidebarProps> = ({ className }) => {
   const onToggle = () => setIsCollapsed((prev) => !prev);
 
   return (
-    <div className={classNames(classes.Sidebar, { [classes.collapsed]: isCollapsed }, [className])}>
-      <Button theme={ButtonThemeEnum.GHOST} onClick={onToggle}>
+    <div
+      data-testid="sidebar"
+      className={classNames(classes.Sidebar, { [classes.collapsed]: isCollapsed }, [className])}
+    >
+      <Button data-testid="toggle" theme={ButtonThemeEnum.GHOST} onClick={onToggle}>
         {isCollapsed ? '>' : '<'}
       </Button>
       <div className={classNames(classes.switchers)}>
