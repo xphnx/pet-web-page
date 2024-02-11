@@ -1,12 +1,17 @@
 .Button {
+  padding: 5px 15px;
   cursor: pointer;
-  color: var(--secondary-color);
+  color: var(--button-primary-color);
+  background-color: var(--button-primary-bgcolor);
+  border: none;
+  border-radius: 3px;
 }
 
 .ghost {
   padding: 0;
   margin: 0;
   border: none;
+  color: unset;
   background: none;
   outline: none;
 }
