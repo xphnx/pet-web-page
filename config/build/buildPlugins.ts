@@ -18,12 +18,14 @@ export default function buildPlugins({ paths, isDev, isAnalyze }: BuildOptions):
     new DefinePlugin({
       __IS_DEV__: JSON.stringify(isDev),
     }),
-    new BundleAnalyzerPlugin({
-      analyzerMode: isAnalyze ? 'server' : 'disabled',
-    }),
   ];
 
   if (isDev) {
+    plugins.push(
+      new BundleAnalyzerPlugin({
+        analyzerMode: isAnalyze ? 'server' : 'disabled',
+      })
+    );
     plugins.push(new ReactRefreshWebpackPlugin());
   }
 
