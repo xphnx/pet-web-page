@@ -1,6 +1,6 @@
 import { ThemeEnum } from '@/app/providers/ThemeProvider';
 import { ThemeDecorator } from '@/shared/config/storybook/decorators/ThemeDecorator';
-import { Button, ButtonThemeEnum } from './Button';
+import { Button, ButtonSizeEnum, ButtonThemeEnum } from './Button';
 
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
@@ -19,6 +19,12 @@ Primary.args = {
   children: 'Primary Button',
 };
 
+export const PrimaryM = Template.bind({});
+PrimaryM.args = {
+  children: 'Primary M',
+  size: ButtonSizeEnum.M,
+};
+
 export const PrimaryDark = Template.bind({});
 PrimaryDark.args = {
   children: 'PrimaryDark Button',
@@ -31,10 +37,37 @@ Ghost.args = {
   theme: ButtonThemeEnum.GHOST,
 };
 
+export const GhostXL = Template.bind({});
+GhostXL.args = {
+  children: 'Ghost XL',
+  theme: ButtonThemeEnum.GHOST,
+  size: ButtonSizeEnum.XL,
+};
+
 export const GhostDark = Template.bind({});
 GhostDark.args = {
   children: 'GhostDark Button',
   theme: ButtonThemeEnum.GHOST,
 };
-
 GhostDark.decorators = [ThemeDecorator(ThemeEnum.DARK)];
+
+export const SquareM = Template.bind({});
+SquareM.args = {
+  children: 'M',
+  square: true,
+  size: ButtonSizeEnum.M,
+};
+
+export const SquareL = Template.bind({});
+SquareL.args = {
+  children: 'L',
+  square: true,
+  size: ButtonSizeEnum.L,
+};
+
+export const SquareXL = Template.bind({});
+SquareXL.args = {
+  children: 'XL',
+  square: true,
+  size: ButtonSizeEnum.XL,
+};

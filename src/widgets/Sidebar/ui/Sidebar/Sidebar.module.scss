@@ -2,12 +2,15 @@
   position: relative;
   height: calc(100vh - var(--navbar-height));
   width: var(--sidebar-width);
-  background: var(--link-primary-color);
+  background: var(--sidebar-bg-color);
   transition: width 0.3s;
 }
 
-.collapsed {
-  width: var(--sidebar-width-collapsed);
+.toggle {
+  position: absolute;
+  right: -40px;
+  top: 15px;
+  z-index: 999;
 }
 
 .switchers {
@@ -19,6 +22,11 @@
   gap: 20px;
 }
 
+.toggle-icon {
+  fill: none;
+  stroke: var(--secondary-color);
+}
+
 .theme-switcher {
   width: 24px;
   height: 24px;
@@ -27,4 +35,61 @@
 .lang-switcher {
   width: 20px;
   height: 24px;
+}
+
+.appLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+  margin-left: 30px;
+}
+
+.appLink {
+  a {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+
+  span {
+    opacity: 1;
+    width: 100%;
+    transition: 0.2s;
+  }
+
+  svg {
+    width: 25px;
+    height: 25px;
+    fill: none;
+    stroke: var(--sidebar-link-primary-color);
+    stroke-width: 1.5px;
+    cursor: pointer;
+  }
+}
+
+.collapsed {
+  width: var(--sidebar-width-collapsed);
+
+  .switchers {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .appLinks {
+    align-items: center;
+    margin-left: 0;
+  }
+
+  .appLink {
+    span {
+      opacity: 0;
+      width: 0;
+      transition: 0.2s;
+    }
+
+    a {
+      height: 26px;
+    }
+  }
 }
