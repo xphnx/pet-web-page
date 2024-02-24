@@ -28,7 +28,7 @@ export const Sidebar: FC<SidebarProps> = ({ className }) => {
     >
       <Button
         data-testid="toggle"
-        className={classNames(classes.toggle)}
+        className={classes.toggle}
         theme={ButtonThemeEnum.GHOST}
         size={ButtonSizeEnum.XL}
         onClick={onToggle}
@@ -40,21 +40,21 @@ export const Sidebar: FC<SidebarProps> = ({ className }) => {
           <ArrowLeft className={classes['toggle-icon']} />
         )}
       </Button>
-      <div className={classNames(classes.appLinks)}>
-        <div className={classNames(classes.appLink)}>
+      <div className={classes.appLinks}>
+        <div className={classes.appLink}>
           <AppLink to={ROUTE_PATH.main}>
             <Home />
             <span>{t('MainLink')}</span>
           </AppLink>
         </div>
-        <div className={classNames(classes.appLink)}>
+        <div className={classes.appLink}>
           <AppLink to={ROUTE_PATH.about}>
             <About />
             <span>{t('AboutLink')}</span>
           </AppLink>
         </div>
       </div>
-      <div className={classNames(classes.switchers)}>
+      <div className={classes.switchers}>
         <ThemeSwitcher className={classes['theme-switcher']} />
         <LangSwitcher className={classes['lang-switcher']} />
       </div>

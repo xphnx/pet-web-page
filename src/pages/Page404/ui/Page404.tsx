@@ -13,7 +13,7 @@ export const Page404: FC<Page404Props> = ({ className }) => {
 
   return (
     <div className={classNames(classes.Page404, {}, [className])}>
-      <div className={classNames(classes.icon404)}>
+      <div className={classes.icon404}>
         <Icon404 />
       </div>
       {t('PageNotFound')}

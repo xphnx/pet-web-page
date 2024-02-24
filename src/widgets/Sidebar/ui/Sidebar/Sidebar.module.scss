@@ -2,7 +2,7 @@
   position: relative;
   height: calc(100vh - var(--navbar-height));
   width: var(--sidebar-width);
-  background: var(--sidebar-bg-color);
+  background: var(--additional-bg-color);
   transition: width 0.3s;
 }
 
@@ -10,7 +10,7 @@
   position: absolute;
   right: -40px;
   top: 15px;
-  z-index: 999;
+  z-index: var(--second-layer);
 }
 
 .switchers {
@@ -24,7 +24,7 @@
 
 .toggle-icon {
   fill: none;
-  stroke: var(--secondary-color);
+  stroke: var(--primary-color);
 }
 
 .theme-switcher {
@@ -62,7 +62,7 @@
     width: 25px;
     height: 25px;
     fill: none;
-    stroke: var(--sidebar-link-primary-color);
+    stroke: var(--primary-link-color);
     stroke-width: 1.5px;
     cursor: pointer;
   }

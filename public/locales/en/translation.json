@@ -4,5 +4,7 @@
   "MainLink": "Main",
   "PageNotFound": "Page not found",
   "FatalError": "Fatal error occured. Try to reload the page",
-  "ReloadPage": "Reload the page"
+  "ReloadPage": "Reload the page",
+  "SignUp": "Sign Up",
+  "SignUpLink": "Sign Up"
 }
