@@ -9,7 +9,7 @@ export const ThemeDecorator =
   (StoryComponent: Story): ReactNode =>
     (
       <ThemeProvider initialTheme={theme}>
-        <div className={theme}>
+        <div className={`app ${theme}`}>
           <StoryComponent />
         </div>
       </ThemeProvider>
