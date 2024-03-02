@@ -24,6 +24,7 @@
     "i18next/no-literal-string": ["error", { "markupOnly": true, "ignoreAttribute": ["data-testid"] }],
     "jsx-a11y/no-static-element-interactions": "off",
     "no-param-reassign": "off",
+    "react/display-name": "off",
     "simple-import-sort/imports": [
         "warn",
         {

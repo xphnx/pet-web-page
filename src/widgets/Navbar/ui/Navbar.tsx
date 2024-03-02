@@ -1,7 +1,8 @@
 import { FC, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { LoginModal } from '@/features/AuthByUsername';
 import { classNames } from '@/shared/lib';
-import { Button, Modal } from '@/shared/ui';
+import { Button } from '@/shared/ui';
 import classes from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -20,9 +21,7 @@ export const Navbar: FC<NavbarProps> = ({ className }) => {
       <Button className={classes.links} onClick={onToggleModal}>
         {t('SignUpLink')}
       </Button>
-      <Modal isOpen={isOpen} onClose={onToggleModal}>
-        {t('SignUp')}
-      </Modal>
+      <LoginModal isOpen={isOpen} onClose={onToggleModal} />
     </div>
   );
 };

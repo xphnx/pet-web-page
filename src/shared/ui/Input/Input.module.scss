@@ -1,0 +1,66 @@
+.label {
+  position: relative;
+  display: inline-block;
+  height: 100%;
+}
+
+.placeholder {
+  position: absolute;
+  left: 10px;
+  top: 0;
+  transition: 0.3s;
+}
+
+.underline {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 0%;
+    height: 1px;
+    background-color: var(--secondary-bg-color);
+    transition: 0.3s;
+    z-index: var(--fourth-layer);
+  }
+
+  &::before {
+    left: 0;
+  }
+
+  &::after {
+    right: 0;
+  }
+}
+
+.Input {
+  position: relative;
+  color: #fff;
+  padding: 5px 10px;
+  background-color: transparent;
+  border: 0;
+  border-bottom: 1px solid #fff;
+
+  &:focus,
+  &.filled {
+    outline: none;
+
+    & + .underline > .placeholder {
+      top: -28px;
+      left: 0;
+      transform: scale(0.8);
+    }
+
+    & + .underline {
+      &::after,
+      &::before {
+        width: 50%;
+      }
+    }
+  }
+}

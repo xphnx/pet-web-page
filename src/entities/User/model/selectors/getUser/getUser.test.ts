@@ -7,11 +7,16 @@ import { DeepPartial } from '@reduxjs/toolkit';
 describe('getUser', () => {
   const stateCase01: DeepPartial<StateSchema> = {
     user: {
-      login: 'xphnx',
+      authorizedUser: {
+        id: '13',
+        login: 'xphnx',
+      },
     },
   };
 
-  const cases: [DeepPartial<StateSchema>, UserSchema][] = [[stateCase01, { login: 'xphnx' }]];
+  const cases: [DeepPartial<StateSchema>, UserSchema][] = [
+    [stateCase01, { authorizedUser: { id: '13', login: 'xphnx' } }],
+  ];
 
   test.each(cases)('Если входные параметры %j, то результат %s', (input, output) => {
     expect(getUser(input as StateSchema)).toEqual(output);

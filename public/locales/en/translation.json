@@ -6,5 +6,8 @@
   "FatalError": "Fatal error occured. Try to reload the page",
   "ReloadPage": "Reload the page",
   "SignUp": "Sign Up",
-  "SignUpLink": "Sign Up"
+  "SignUpLink": "Sign Up",
+  "Login": "login",
+  "Password": "password",
+  "SignIn": "Sign In"
 }

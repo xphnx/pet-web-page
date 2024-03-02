@@ -6,7 +6,9 @@ import { DeepPartial } from '@reduxjs/toolkit';
 describe('getUserLogin', () => {
   const stateCase01: DeepPartial<StateSchema> = {
     user: {
-      login: 'xphnx',
+      authorizedUser: {
+        login: 'xphnx',
+      },
     },
   };
 

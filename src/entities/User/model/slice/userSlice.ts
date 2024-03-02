@@ -3,7 +3,7 @@ import { UserSchema } from '../types/userSchema';
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState: UserSchema = {
-  login: 'admin',
+  authorizedUser: null,
 };
 
 export const userSlice = createSlice({
@@ -13,3 +13,4 @@ export const userSlice = createSlice({
 });
 
 export const { reducer: userReducer } = userSlice;
+export const { actions: userActions } = userSlice;
