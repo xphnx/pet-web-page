@@ -2,7 +2,6 @@ import { FC } from 'react';
 import { classNames } from '@/shared/lib';
 import { Modal } from '@/shared/ui';
 import { LoginForm } from '../LoginForm/LoginForm';
-import classes from './LoginModal.module.scss';
 
 interface LoginModalProps {
   isOpen: boolean;
@@ -11,7 +10,7 @@ interface LoginModalProps {
 }
 
 export const LoginModal: FC<LoginModalProps> = ({ className, isOpen, onClose }) => (
-  <Modal className={classNames(classes.LoginModal, {}, [className])} isOpen={isOpen} onClose={onClose}>
+  <Modal className={classNames('', {}, [className])} isOpen={isOpen} onClose={onClose}>
     <LoginForm />
   </Modal>
 );
