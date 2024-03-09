@@ -5,9 +5,11 @@
   "PageNotFound": "Page not found",
   "FatalError": "Fatal error occured. Try to reload the page",
   "ReloadPage": "Reload the page",
-  "SignUp": "Sign Up",
-  "SignUpLink": "Sign Up",
+  "SignInLink": "Sign In",
   "Login": "login",
   "Password": "password",
-  "SignIn": "Sign In"
+  "SignIn": "Sign In",
+  "AuthForm": "Authorization form",
+  "WrongFormValues": "Wrong login or password",
+  "SignOutLink": "Sign Out"
 }

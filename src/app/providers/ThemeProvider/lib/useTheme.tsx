@@ -1,5 +1,6 @@
 import { useContext } from 'react';
-import { LOCAL_STORAGE_THEME_KEY, ThemeContext, ThemeEnum } from './ThemeContext';
+import { THEME_LOCALSTORAGE__KEY } from '@/shared/const/localstorage';
+import { ThemeContext, ThemeEnum } from './ThemeContext';
 
 interface UseThemeResult {
   theme: ThemeEnum;
@@ -13,7 +14,7 @@ export const useTheme = (): UseThemeResult => {
     const newTheme = theme === ThemeEnum.DARK ? ThemeEnum.LIGHT : ThemeEnum.DARK;
 
     setTheme(newTheme);
-    localStorage.setItem(LOCAL_STORAGE_THEME_KEY, newTheme);
+    localStorage.setItem(THEME_LOCALSTORAGE__KEY, newTheme);
   };
 
   return {

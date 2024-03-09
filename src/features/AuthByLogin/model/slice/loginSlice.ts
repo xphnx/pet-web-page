@@ -1,25 +1,30 @@
+import { authByLogin } from '../services/authByLogin/authByLogin';
 import { LoginSchema } from '../types/loginSchema';
 
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 
 const initialState: LoginSchema = {
-  login: '',
-  password: '',
   isLoading: false,
+  error: '',
 };
 
 export const loginSlice = createSlice({
   name: 'login',
   initialState,
-  reducers: {
-    setLogin: (state, { payload: login }: PayloadAction<string>) => {
-      state.login = login;
-    },
-    setPassword: (state, { payload: password }: PayloadAction<string>) => {
-      state.password = password;
-    },
+  reducers: {},
+  extraReducers: (builder) => {
+    builder.addCase(authByLogin.pending, (state) => {
+      state.isLoading = true;
+      state.error = '';
+    });
+    builder.addCase(authByLogin.fulfilled, (state) => {
+      state.isLoading = false;
+    });
+    builder.addCase(authByLogin.rejected, (state, action) => {
+      state.isLoading = false;
+      state.error = action.payload;
+    });
   },
 });
 
 export const { reducer: loginReducer } = loginSlice;
-export const { actions: loginActions } = loginSlice;

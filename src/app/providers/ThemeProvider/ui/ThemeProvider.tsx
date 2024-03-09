@@ -1,7 +1,8 @@
 import { FC, useState } from 'react';
-import { LOCAL_STORAGE_THEME_KEY, ThemeContext, ThemeEnum } from '../lib/ThemeContext';
+import { THEME_LOCALSTORAGE__KEY } from '@/shared/const/localstorage';
+import { ThemeContext, ThemeEnum } from '../lib/ThemeContext';
 
-const defaultTheme = (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as ThemeEnum) || ThemeEnum.LIGHT;
+const defaultTheme = (localStorage.getItem(THEME_LOCALSTORAGE__KEY) as ThemeEnum) || ThemeEnum.LIGHT;
 
 interface ThemeProviderProps {
   initialTheme?: ThemeEnum;

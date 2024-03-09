@@ -1,10 +1,8 @@
 import { FC } from 'react';
+import { Moon, Sun } from 'lucide-react';
 import { ThemeEnum, useTheme } from '@/app/providers/ThemeProvider';
-import DarkThemeIcon from '@/shared/assets/icons/dark-theme.svg';
-import LightThemeIcon from '@/shared/assets/icons/light-theme.svg';
 import { classNames } from '@/shared/lib';
 import { Button, ButtonThemeEnum } from '@/shared/ui';
-import classes from './ThemeSwitcher.module.scss';
 
 interface ThemeSwitcherProps {
   className?: string;
@@ -15,11 +13,7 @@ export const ThemeSwitcher: FC<ThemeSwitcherProps> = ({ className }) => {
 
   return (
     <Button className={classNames('', {}, [className])} theme={ButtonThemeEnum.GHOST} onClick={toggleTheme}>
-      {theme === ThemeEnum.DARK ? (
-        <LightThemeIcon className={classes.Icon} />
-      ) : (
-        <DarkThemeIcon className={classes.Icon} />
-      )}
+      {theme === ThemeEnum.DARK ? <Sun /> : <Moon />}
     </Button>
   );
 };

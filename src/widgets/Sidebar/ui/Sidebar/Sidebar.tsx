@@ -1,9 +1,6 @@
 import { FC, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import About from '@/shared/assets/icons/about.svg';
-import ArrowLeft from '@/shared/assets/icons/arrow-left.svg';
-import ArrowRight from '@/shared/assets/icons/arrow-right.svg';
-import Home from '@/shared/assets/icons/home.svg';
+import { ArrowLeftSquare, ArrowRightSquare, Indent, Store } from 'lucide-react';
 import { ROUTE_PATH } from '@/shared/config';
 import { classNames } from '@/shared/lib';
 import { AppLink, Button, ButtonThemeEnum } from '@/shared/ui';
@@ -34,22 +31,18 @@ export const Sidebar: FC<SidebarProps> = ({ className }) => {
         onClick={onToggle}
         square
       >
-        {isCollapsed ? (
-          <ArrowRight className={classes['toggle-icon']} />
-        ) : (
-          <ArrowLeft className={classes['toggle-icon']} />
-        )}
+        {isCollapsed ? <ArrowRightSquare /> : <ArrowLeftSquare />}
       </Button>
       <div className={classes.appLinks}>
         <div className={classes.appLink}>
           <AppLink to={ROUTE_PATH.main}>
-            <Home />
+            <Store />
             <span>{t('MainLink')}</span>
           </AppLink>
         </div>
         <div className={classes.appLink}>
           <AppLink to={ROUTE_PATH.about}>
-            <About />
+            <Indent />
             <span>{t('AboutLink')}</span>
           </AppLink>
         </div>

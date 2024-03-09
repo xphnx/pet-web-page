@@ -71,3 +71,9 @@ SquareXL.args = {
   square: true,
   size: ButtonSizeEnum.XL,
 };
+
+export const Loading = Template.bind({});
+Loading.args = {
+  children: 'Loading',
+  isLoading: true,
+};

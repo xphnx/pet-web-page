@@ -13,6 +13,6 @@ export const parameters = {
   },
 };
 
-addDecorator(RouterDecorator);
 addDecorator(StyleDecorator);
 addDecorator(ThemeDecorator(ThemeEnum.LIGHT));
+addDecorator(RouterDecorator);

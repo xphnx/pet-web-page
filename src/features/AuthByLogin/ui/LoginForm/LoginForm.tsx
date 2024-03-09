@@ -1,11 +1,11 @@
-import { FC, memo, useCallback } from 'react';
+import { FC, memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib';
-import { Button, Input } from '@/shared/ui';
+import { Button, Input, Text } from '@/shared/ui';
+import { TextTheme } from '@/shared/ui/Text/Text';
 import { getLoginFormState } from '../../model/selectors/getLoginForm/getLoginFormState';
 import { authByLogin } from '../../model/services/authByLogin/authByLogin';
-import { loginActions } from '../../model/slice/loginSlice';
 import classes from './LoginForm.module.scss';
 
 interface LoginFormProps {
@@ -13,33 +13,35 @@ interface LoginFormProps {
 }
 
 export const LoginForm: FC<LoginFormProps> = memo(({ className }) => {
+  const [formFieldsValue, setFormFieldsValue] = useState<{ login: string; password: string }>({
+    login: '',
+    password: '',
+  });
   const dispatch = useDispatch();
-  const { login, password } = useSelector(getLoginFormState);
+  const { isLoading, error } = useSelector(getLoginFormState);
   const { t } = useTranslation();
 
-  const onChangeLogin = useCallback(
-    (login: string) => {
-      dispatch(loginActions.setLogin(login));
-    },
-    [dispatch]
-  );
+  const onChangeLogin = useCallback((login: string) => {
+    setFormFieldsValue((prev) => ({ ...prev, login }));
+  }, []);
 
-  const onChangePassword = useCallback(
-    (password: string) => {
-      dispatch(loginActions.setPassword(password));
-    },
-    [dispatch]
-  );
+  const onChangePassword = useCallback((password: string) => {
+    setFormFieldsValue((prev) => ({ ...prev, password }));
+  }, []);
 
   const onSubmitForm = useCallback(() => {
-    dispatch(authByLogin({ login, password }));
-  }, [dispatch, login, password]);
+    dispatch(authByLogin({ login: formFieldsValue.login, password: formFieldsValue.password }));
+  }, [dispatch, formFieldsValue]);
 
   return (
     <div className={classNames(classes.LoginForm, {}, [className])}>
-      <Input placeholder={t('Login')} value={login} onChange={onChangeLogin} />
-      <Input placeholder={t('Password')} value={password} onChange={onChangePassword} />
-      <Button onClick={onSubmitForm}>{t('SignIn')}</Button>
+      <Text title={t('AuthForm')} />
+      {error && <Text text={t('WrongFormValues')} theme={TextTheme.ERROR} />}
+      <Input placeholder={t('Login')} value={formFieldsValue.login} onChange={onChangeLogin} />
+      <Input placeholder={t('Password')} value={formFieldsValue.password} onChange={onChangePassword} />
+      <Button onClick={onSubmitForm} isLoading={isLoading}>
+        {t('SignIn')}
+      </Button>
     </div>
   );
 });

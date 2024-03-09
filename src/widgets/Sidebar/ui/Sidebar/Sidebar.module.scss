@@ -22,11 +22,6 @@
   gap: 20px;
 }
 
-.toggle-icon {
-  fill: none;
-  stroke: var(--primary-color);
-}
-
 .theme-switcher {
   width: 24px;
   height: 24px;
@@ -56,15 +51,6 @@
     opacity: 1;
     width: 100%;
     transition: 0.2s;
-  }
-
-  svg {
-    width: 25px;
-    height: 25px;
-    fill: none;
-    stroke: var(--primary-link-color);
-    stroke-width: 1.5px;
-    cursor: pointer;
   }
 }
 

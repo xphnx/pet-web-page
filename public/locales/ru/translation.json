@@ -5,9 +5,11 @@
   "PageNotFound": "Страница не найдена",
   "FatalError": "Произошла ошибка. Попробуйте обновить страницу",
   "ReloadPage": "Обновить страницу",
-  "SignUp": "Регистрация",
-  "SignUpLink": "Регистрация",
+  "SignInLink": "Войти",
   "Login": "логин",
   "Password": "пароль",
-  "SignIn": "Войти"
+  "SignIn": "Войти",
+  "AuthForm": "Форма авторизации",
+  "WrongFormValues": "Неверный логин или пароль",
+  "SignOutLink": "Выйти"
 }

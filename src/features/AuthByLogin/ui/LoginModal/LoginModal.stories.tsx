@@ -1,6 +1,5 @@
-import { Provider } from 'react-redux';
-import { createReduxStore } from '@/app/providers/StoreProvider';
 import { ThemeEnum } from '@/app/providers/ThemeProvider';
+import { StoreDecorator } from '@/shared/config/storybook/decorators/StoreDecorator';
 import { ThemeDecorator } from '@/shared/config/storybook/decorators/ThemeDecorator';
 import { LoginModal } from './LoginModal';
 
@@ -14,11 +13,7 @@ export default {
   },
 } as ComponentMeta<typeof LoginModal>;
 
-const Template: ComponentStory<typeof LoginModal> = (args) => (
-  <Provider store={createReduxStore()}>
-    <LoginModal {...args} />
-  </Provider>
-);
+const Template: ComponentStory<typeof LoginModal> = (args) => <LoginModal {...args} />;
 
 export const LoginModalDark = Template.bind({});
 LoginModalDark.args = {
@@ -26,3 +21,4 @@ LoginModalDark.args = {
 };
 
 LoginModalDark.decorators = [ThemeDecorator(ThemeEnum.DARK)];
+LoginModalDark.decorators = [StoreDecorator({})];
