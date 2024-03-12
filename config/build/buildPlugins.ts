@@ -6,7 +6,7 @@ import { BuildOptions } from './types/config';
 
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 
-export default function buildPlugins({ paths, isDev, isAnalyze }: BuildOptions): WebpackPluginInstance[] {
+export default function buildPlugins({ paths, isDev }: BuildOptions): WebpackPluginInstance[] {
   const plugins = [
     new HtmlWebpackPlugin({
       template: paths.html,
@@ -21,12 +21,8 @@ export default function buildPlugins({ paths, isDev, isAnalyze }: BuildOptions):
   ];
 
   if (isDev) {
-    plugins.push(
-      new BundleAnalyzerPlugin({
-        analyzerMode: isAnalyze ? 'server' : 'disabled',
-      })
-    );
     plugins.push(new ReactRefreshWebpackPlugin());
+    plugins.push(new BundleAnalyzerPlugin());
   }
 
   return plugins;
